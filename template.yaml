@@ -312,7 +312,7 @@ Resources:
         Fn::GetAtt:
         - SageMakerExecutionRole
         - Arn
-      NotebookInstanceName: AWS_Batch_Backtest_Notebook
+      NotebookInstanceName: backtest-notebook
       
   ecsTaskExecutionRole:
     Type: AWS::IAM::Role
