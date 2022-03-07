@@ -334,6 +334,11 @@ Resources:
         - ''
         - - 'arn:'
           - Ref: AWS::Partition
+          - ":iam::aws:policy/AmazonEC2ContainerRegistryFullAccess"
+      - Fn::Join:
+        - ''
+        - - 'arn:'
+          - Ref: AWS::Partition
           - ":iam::aws:policy/AmazonS3FullAccess"
       RoleName: ecsTaskExecutionRole
           
