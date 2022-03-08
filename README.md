@@ -93,10 +93,9 @@ import boto3
 s3 = boto3.client('s3',region_name=aws_region)
 
 # 创建存储桶
-if s3.head_bucket(Bucket=s3_source)['ResponseMetadata']['HTTPStatusCode']!=200:
-    s3.create_bucket(Bucket=s3_source)
-if s3.head_bucket(Bucket=s3_dest)['ResponseMetadata']['HTTPStatusCode']!=200:
-    s3.create_bucket(Bucket=s3_dest)
+
+s3.create_bucket(Bucket=s3_source)
+s3.create_bucket(Bucket=s3_dest)
 
 # 确认存储桶创建成功
 if s3.head_bucket(Bucket=s3_source)['ResponseMetadata']['HTTPStatusCode']==200:
@@ -110,7 +109,7 @@ if s3.head_bucket(Bucket=s3_dest)['ResponseMetadata']['HTTPStatusCode']==200:
 ! git clone https://github.com/forhead/build_backtest_with_aws_batch.git
 ! aws s3 sync build_backtest_with_aws_batch/data_source s3://{s3_source}/
 ```
-* Batch执行任务会基于容器来运行，因为AWS Batch执行任务基于容器来运行，所以只需要让代码可以接受参数，在参数中定义历史数据存储桶位置，历史数据文件名，结果存储桶位置。
+* 因为AWS Batch执行任务基于容器来运行，所以只需要让代码可以接受参数，在参数中定义"历史数据存储桶位置"，"历史数据文件名"以及"结果存储桶位置"。
 
 ```
 !mkdir batch
@@ -354,7 +353,7 @@ RUN chmod -R 777 backtest.py
 
 ![](/images/8.create_compute_env.png)
 
-* 选择fargate，无需再考虑虚拟机的运维工作。其他全部选择默认即可，点击创建，计算环境创建完毕
+* 选择Fargate，其他全部选择默认即可，点击创建，计算环境创建完毕
 
 ![](/images/8.create_compute_env_fargate.png)
 
