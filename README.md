@@ -42,9 +42,9 @@ Amazon SageMaker Notebook 实例是一个机器学习 (ML) 计算实例，运行
 
 ## 4.环境准备
 
-为了实验方便，我们推荐使用Cloudformation快速创建环境。在这个环节中，我们将通过预先准备好的 CloudFormation 模板创建实验的基础网络环境和实验资源。通过以下代码下载CloudFormation文件。
+为了实验方便，我们推荐使用Cloudformation快速创建环境。在这个环节中，我们将通过预先准备好的 CloudFormation 模板创建实验的基础网络环境和实验资源。通过以下代码下载template.yaml。
 ```
-git clone https://github.com/forhead/build_backtest_with_aws_batch/blob/main/content/template.yaml
+curl -LJO https://raw.githubusercontent.com/forhead/build_backtest_with_aws_batch/main/content/template.yaml
 ```
 
 通过此链接直接导航到 CloudFormation 控制台创建新堆栈的界面：[CloudFormation](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/template)。
@@ -64,7 +64,7 @@ git clone https://github.com/forhead/build_backtest_with_aws_batch/blob/main/con
 
 * 首先执行以下代码，下载backtest.ipynb
 ```
-git clone https://github.com/forhead/build_backtest_with_aws_batch/blob/main/content/backtest.ipynb
+curl -LJO https://raw.githubusercontent.com/forhead/build_backtest_with_aws_batch/main/content/backtest.ipynb
 ```
 * 打开[notebook-instances](https://console.aws.amazon.com/sagemaker/home?region=us-east-1#/notebook-instances)的链接，点击上传按钮，上传backtest.ipynb文件
 ![](/images/5.upload_notebook.png)
