@@ -70,10 +70,13 @@ curl -LJO https://raw.githubusercontent.com/forhead/build_backtest_with_aws_batc
 
 ![](/images/5.open_notebook.png)
 
-打开后，点击上传按钮，上传backtest.ipynb文件
+* 打开后，点击上传按钮，上传backtest.ipynb文件
 ![](/images/5.upload_notebook.png)
 
-* 在打开的Notebook中，首先执行以下代码，用来定义环境变量
+* 上传完成后，打开Notebook，可以看到以下的界面,点击运行可以执行Notebook中的代码块
+![](/images/5.notebook_run_code.png)
+
+* 首先执行以下代码，用来定义环境变量
 ```
 import boto3
 
