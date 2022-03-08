@@ -55,7 +55,7 @@ curl -LJO https://raw.githubusercontent.com/forhead/build_backtest_with_aws_batc
 * 上传完成后点击**Next**
 * 在下一步中，列出了模板所需的参数。在 **Stack name** 选项中填入 **backtest**，其他参数保持默认，然后点击**Next**：
 * 直接点击**Next**到最终的审核步骤
-* 下滑到最下方，勾选**I acknowledge that AWS CloudFormation might create IAM resources with custom names.**，然后点击右下方的**Create stack**按钮：
+* 滑到最下方，勾选**I acknowledge that AWS CloudFormation might create IAM resources with custom names.**，然后点击**Create stack**按钮：
 ![](/images/4.cloudformation_acknowledge.png)
 * 大概等待5分钟左右，堆栈创建成功
 
@@ -66,7 +66,11 @@ curl -LJO https://raw.githubusercontent.com/forhead/build_backtest_with_aws_batc
 ```
 curl -LJO https://raw.githubusercontent.com/forhead/build_backtest_with_aws_batch/main/content/backtest.ipynb
 ```
-* 打开[notebook-instances](https://console.aws.amazon.com/sagemaker/home?region=us-east-1#/notebook-instances)的链接，点击上传按钮，上传backtest.ipynb文件
+* 打开[notebook-instances](https://console.aws.amazon.com/sagemaker/home?region=us-east-1#/notebook-instances)的链接，找到创建的Notebook实例，选择***Open Jupyter***
+
+![](/images/5.open_notebook.png)
+
+打开后，点击上传按钮，上传backtest.ipynb文件
 ![](/images/5.upload_notebook.png)
 
 * 在打开的Notebook中，首先执行以下代码，用来定义环境变量
